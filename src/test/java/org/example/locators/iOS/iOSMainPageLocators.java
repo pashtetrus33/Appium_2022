@@ -1,20 +1,20 @@
-package org.example.locators;
+package org.example.locators.iOS;
 
 import io.appium.java_client.MobileBy;
+import org.example.locators.interfaces.MainPageLocators;
 import org.openqa.selenium.By;
 
-// Класс с локаторами главной/домашней страницы.
-public class MainPageLocators {
+public class iOSMainPageLocators implements MainPageLocators {
 
     public By loginButton() {
         return MobileBy.AccessibilityId("Login");
     }
 
-    public By formsButton() {
-        return MobileBy.AccessibilityId("Forms");
-    }
-
     public By homeScreen() {
         return MobileBy.AccessibilityId("Home-screen");
+    }
+
+    public By formsButton() {
+        return MobileBy.AccessibilityId("Forms");
     }
 }

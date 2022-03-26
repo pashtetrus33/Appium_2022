@@ -23,7 +23,13 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.20</version>
                 <configuration>
-                    <argLine>                   -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                    <!--для работы profiles-->
+                    <systemPropertyVariables>
+                        <!--suppress UnresolvedMavenProperty -->
+                        <platform>${platform}</platform>
+                    </systemPropertyVariables>
+                    <argLine>
+                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
                 </configuration>
                 <dependencies>
@@ -34,6 +40,7 @@
                     </dependency>
                 </dependencies>
             </plugin>
+
         </plugins>
     </build>
 
@@ -78,5 +85,20 @@
             <version>1.7.5</version>
         </dependency>
     </dependencies>
+    <profiles>
+        <profile>
+            <id>iOS</id>
+            <properties>
+                <platform>iOS</platform>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>Android</id>
+            <properties>
+                <platform>Android</platform>
+            </properties>
+        </profile>
+    </profiles>
 
 </project>
