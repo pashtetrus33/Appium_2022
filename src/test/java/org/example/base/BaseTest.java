@@ -32,7 +32,7 @@ public class BaseTest {
     public static WebDriver getAppiumDriver() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
-        switch (System.getProperty("platform")) {
+        switch ("Android")  {
             case "Android":
                 // устанавливаем capabilities.
                 capabilities.setCapability("platformName", "Android");

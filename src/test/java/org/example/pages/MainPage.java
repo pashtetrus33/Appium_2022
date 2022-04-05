@@ -37,7 +37,7 @@ public class MainPage {
     @Step("Делаем скриншот главной страницы и сравниваем с требованием.")
     public MainPage checkScreenshot() {
         // Загружаем ожидаемое изображения для сравнения.
-        BufferedImage expectedImage = ImageComparisonUtil.readImageFromResources("src/main/resources/expectedScreenshots/mainPage.png");
+        BufferedImage expectedImage = ImageComparisonUtil.readImageFromResources("src/test/resources/expectedScreenshots/mainPage.png");
         // Делаем актуальный скриншот, используя элемент и игнорируя другие части экрана.
         File actualScreenshot = $(locator().homeScreen()).screenshot();
         // Загружаем актуальный скриншот.
@@ -56,7 +56,7 @@ public class MainPage {
     @Step("Делаем проверку падения теста по скриншоту.")
     public MainPage checkFailScreenshot() {
         // Загружаем ожидаемо неверное изображение для сравнения.
-        BufferedImage expectedImage = ImageComparisonUtil.readImageFromResources("src/main/resources/expectedScreenshots/failTest.png");
+        BufferedImage expectedImage = ImageComparisonUtil.readImageFromResources("src/test/resources/expectedScreenshots/failTest.png");
         // Делаем актуальный скриншот, используя элемент и игнорируя другие части экрана.
         File actualScreenshot = $(locator().homeScreen()).screenshot();
         // Загружаем актуальный скриншот.

@@ -40,7 +40,7 @@ public class FormsPage {
     @Step("Делаем скриншот страницы Forms и сравниваем с требованием.")
     public FormsPage checkScreenshot() {
         // Загружаем ожидаемое изображения для сравнения.
-        BufferedImage expectedImage = ImageComparisonUtil.readImageFromResources("src/main/resources/expectedScreenshots/formsPage.png");
+        BufferedImage expectedImage = ImageComparisonUtil.readImageFromResources("src/test/resources/expectedScreenshots/formsPage.png");
         // Делаем актуальный скриншот, используя элемент и игнорируя другие части экрана.
         File actualScreenshot = $(locator().formsScreen()).screenshot();
         // Загружаем актуальный скриншот.
