@@ -7,8 +7,9 @@ import com.github.romankh3.image.comparison.ImageComparisonUtil;
 import com.github.romankh3.image.comparison.model.ImageComparisonResult;
 import com.github.romankh3.image.comparison.model.ImageComparisonState;
 import io.qameta.allure.Step;
-import org.example.locators.FormsPageLocators;
-import org.example.locators.LoginPageLocators;
+import org.example.locators.Android.AndroidFormsPageLocators;
+import org.example.locators.LocatorService;
+import org.example.locators.interfaces.FormsPageLocators;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -20,8 +21,9 @@ public class FormsPage {
 
     // Метод позволяет работать с локаторами для нужной нам страницы.
     private FormsPageLocators locator() {
-        return new FormsPageLocators();
+        return LocatorService.FORMS_PAGE_LOCATORS;
     }
+
 
     @Step("Набираем текст в поле Input field")
     public FormsPage typeInInputField(String text) {

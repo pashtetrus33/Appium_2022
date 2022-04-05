@@ -1,9 +1,11 @@
-package org.example.locators;
+package org.example.locators.iOS;
 
 import io.appium.java_client.MobileBy;
+import org.example.locators.interfaces.FormsPageLocators;
+import org.example.locators.interfaces.LoginPageLocators;
 import org.openqa.selenium.By;
 
-public class FormsPageLocators {
+public class iOSFormsPageLocators implements FormsPageLocators {
 
     public By InputField() {
         return MobileBy.AccessibilityId("text-input");
@@ -15,4 +17,9 @@ public class FormsPageLocators {
         return MobileBy.AccessibilityId("Forms-screen");
     }
 }
+
+
+
+
+
 
